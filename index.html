@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Light youtube for busy people.">
+    <meta name="author" content="Shreya">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>YouLite</title>
+      
+   <style>
+   
+      html,body {
+   margin:0;
+   padding:0;
+   height:100%;
+   width:100%}
+   
+  
+   .outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  /* Whatever width you want */
+}
+   
+   
+   
+   
+   .dark-mode {background-color: #4d4855;
+background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+   color : #C0C0C0;
+}
+   .light-mode {background-color: #c3cbdc;
+background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+   color : #404040;
+   }
+   .content {
+   height:100vh
+   }
+   .content-main {
+   height: 85vh
+   }
+   #toggle-btn {
+   border: 2px solid #808080;
+   border-radius:6px;
+   background: transparent;
+   height: 35px;
+   outline: none;
+   color: #606060;
+   padding-left: 10px;
+   padding-right: 10px;
+   }
+   #toggle-btn:hover {
+   box-shadow: 0.5px 0.5px 8px rgba(192, 185, 185, 0.2);
+   /**/
+   }
+   #toggle-btn.dark-mode:hover {
+   background: #404040;
+   color: #C0C0C0;
+   }
+   #toggle-btn.light-mode:hover {
+   background: #C0C0C0;
+   color: #404040;
+   }
+   
+   #search-box {
+   border: 2px solid #808080;
+   border-radius:6px;
+   background: transparent;
+   height: 35px;
+   padding:15px;
+   outline: none;
+   color: #606060;
+   }
+   #search-box:hover {
+   box-shadow: 0.5px 0.5px 8px rgba(192, 185, 185, 0.2);
+   }
+   
+   .content-foot {
+   margin-bottom:0;
+   padding-bottom:0;
+   bottom:0}
+   footer {
+   margin-bottom:0;
+   padding-bottom:0;
+   bottom:0;
+   color: #808080
+   }
+   
+   </style>
+   
+   
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+
+<body class="dark-mode" data-spy="scroll"  data-offset="40" id="body">
+
+ <div id="content" class="text-center">
+<div class="container content-main text-center">
+
+<div class="outer mx-auto">
+  <div class="middle mx-auto">
+    <form id='search-form' class="inner mx-auto">
+      <input id="search-box" class="mx-auto" style=" width: 70vw; " placeholder="Search Youtube Video by Keyword">
+  
+    </form>
+  </div>
+</div>
+  
+</div>
+
+    
+
+    <div class="container content-foot position-static bottom-0 text-center">
+        <footer class="footer mb-0 pb-0">
+        <button class='dark-mode' id='toggle-btn' onclick="toggle()"> theme </button>
+            <p class="mb-0">If you liked my project you can - <b>Follow</b> me and <b>Tip</b> me at <a target="_blank" class="icon-link icon-link-hover" style="" href="https://www.soshals.app/shreya"> Shreya<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+</svg></a></p>
+           
+        </footer>
+        
+        <script>
+        const body = document.getElementById('body');
+        const toggleBtn = document.getElementById('toggle-btn');
+        let bodyClasses = body.classList;
+        let btnClasses = toggleBtn.classList;
+        const toggle = function (){
+        bodyClasses.toggle('light-mode');
+        bodyClasses.toggle('dark-mode');
+        btnClasses.toggle('light-mode');
+        btnClasses.toggle('dark-mode');
+        console.log(body)
+        };
+        
+        </script>
+    </div> 
+    
+    </div><!-- end of page footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="assets/js/meyawo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
